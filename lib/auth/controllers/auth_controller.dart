@@ -40,7 +40,17 @@ class AuthController extends GetxController {
 
         // Update values if they differ
         GetStorage().write('isLoggedIn', true);
-        GetStorage().write('token', response.elementAt(1)['token']);
+
+        // Update token
+
+        final String storedToken = GetStorage().read(
+              'token',
+            ) ??
+            '';
+
+        if (storedToken != response.elementAt(1)['token']) {
+          GetStorage().write('token', response.elementAt(1)['token']);
+        }
 
         Get.snackbar('Great', 'Login Successfully');
 

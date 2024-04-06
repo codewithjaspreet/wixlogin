@@ -10,6 +10,8 @@ class THttpHelper {
 
   // Helper method to make a GET request
   static Future<Set> get(String endpoint) async {
+    print('Current token ${GetStorage().read('token')}');
+
     final response = await http.get(Uri.parse('$_baseUrl/$endpoint'), headers: {
       'Authorization': 'Bearer token ${GetStorage().read('token')}'
     });
@@ -55,3 +57,5 @@ class THttpHelper {
 }
 
 // https://app.prosessed.com/api/resource/Planner?fields=["*"]&filters=[["owner","=","navneetmaheshwari99@gmail.com"]]
+
+

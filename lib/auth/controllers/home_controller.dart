@@ -27,7 +27,6 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     userDetails();
     super.onInit();
   }

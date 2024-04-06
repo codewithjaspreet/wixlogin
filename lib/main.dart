@@ -8,9 +8,9 @@ void main() async {
 
   final box = GetStorage();
   // Add listener for changes
-  box.listenKey('full_name', (value) {
+  box.listenKey('token', (value) {
     // Handle user name changes here
-    print('full_name changed: $value');
+    print('token: $value');
   });
 
   runApp(const MyApp());
@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: LoginScreen(),
       // initialBinding: AppBinding(),
     );
   }
