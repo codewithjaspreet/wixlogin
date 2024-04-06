@@ -13,7 +13,7 @@ class THttpHelper {
     print('Current token ${GetStorage().read('token')}');
 
     final response = await http.get(Uri.parse('$_baseUrl/$endpoint'), headers: {
-      'Authorization': 'Bearer token ${GetStorage().read('token')}'
+      'Authorization': 'Bearer Token ${GetStorage().read('token')}'
     });
     return _handleResponse(response);
   }
@@ -55,7 +55,3 @@ class THttpHelper {
     }
   }
 }
-
-// https://app.prosessed.com/api/resource/Planner?fields=["*"]&filters=[["owner","=","navneetmaheshwari99@gmail.com"]]
-
-
