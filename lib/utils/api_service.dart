@@ -12,9 +12,8 @@ class THttpHelper {
   static Future<Set> get(String endpoint) async {
     print('Current token ${GetStorage().read('token')}');
 
-    final response = await http.get(Uri.parse('$_baseUrl/$endpoint'), headers: {
-      'Authorization': 'Bearer Token ${GetStorage().read('token')}'
-    });
+    final response = await http.get(Uri.parse('$_baseUrl/$endpoint'),
+        headers: {'Authorization': 'Bearer ${GetStorage().read('token')}'});
     return _handleResponse(response);
   }
 

@@ -4,7 +4,7 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:wixlogin/dashboard/home_screen.dart';
+import 'package:wixlogin/dashboard/views/home_screen.dart';
 import 'package:wixlogin/utils/api_service.dart';
 
 class AuthController extends GetxController {
